@@ -45,7 +45,8 @@ class LoginActivity : AppCompatActivity() {
 
         login_btn.setOnClickListener {
 
-            val phone = login_et.text.toString().trim()
+            var phone = login_et.text.toString().trim()
+            phone = UserData.formatPhoneNumber(phone)
 
             userData.saveData("phone", phone)
 

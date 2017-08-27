@@ -84,13 +84,13 @@ class UserData(var context: Context) {
         val myTracker:MutableMap<String,String> = HashMap()
 
         fun formatPhoneNumber(phoneNumber:String):String {
-            var onlyNumber= phoneNumber.replace("[^0-9]".toRegex(),"")
+            var onlyNumber = phoneNumber.replace("[^0-9]".toRegex(),"")
             if (phoneNumber[0] == '+') {
-                onlyNumber ="+"+ phoneNumber
-                if (phoneNumber.length == 11){
-                    //only for bd
-                    onlyNumber ="+88"+ phoneNumber
-                }
+                onlyNumber ="+"+ onlyNumber
+
+            }else if (phoneNumber[0] == '0'){
+                //only for bd
+                onlyNumber ="+88"+ onlyNumber
             }
 
             return  onlyNumber

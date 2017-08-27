@@ -160,14 +160,14 @@ class TrackerActivity : AppCompatActivity(), Adapter.ClickListener {
                                     ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id,null,null)
 
                             phones.moveToFirst()
-                            val phoneNumber = phones.getString(phones.getColumnIndex(
+                            var phoneNumber = phones.getString(phones.getColumnIndex(
                                     ContactsContract.CommonDataKinds.Phone.DATA1))
 
                             val name = cursor.getString(cursor.getColumnIndex(
                                     ContactsContract.Contacts.DISPLAY_NAME))
 
-                            //todo fix number
-                            val number = "1"
+                            //complete fix number
+                            phoneNumber = UserData.formatPhoneNumber(phoneNumber)
 
                             UserData.myTracker.put(name,phoneNumber)
                             userData!!.saveContactInfo()
