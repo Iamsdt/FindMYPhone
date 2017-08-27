@@ -7,5 +7,6 @@ class Constant{
     companion object {
         val sharedPrefKey = "user_data"
         val sharedPrefPhoneValue = "user_phoneNumber"
+        val sharedPrefUser = "firebaseUser"
     }
 }
