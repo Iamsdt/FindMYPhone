@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Find my phone</string>
+    <string name="et_number">Your phone number</string>
+    <string name="btn_register">Register</string>
+</resources>
