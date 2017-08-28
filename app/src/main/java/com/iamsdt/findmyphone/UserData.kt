@@ -31,11 +31,10 @@ class UserData(var context: Context) {
     }
 
     fun loadPhoneNumber():String{
-        val phone = sharedPref!!.getString(Constant.sharedPrefPhoneValue,null)
-        val user = sharedPref!!.getString(Constant.sharedPrefUser,null)
+        val phone = sharedPref!!.getString(Constant.sharedPrefPhoneValue,"")
+        val user = sharedPref!!.getString(Constant.sharedPrefUser,"")
 
-
-        if (phone == null || user == null){
+        if (phone == "" || user == ""){
             context.startActivity(Intent(context,LoginActivity::class.java)
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
