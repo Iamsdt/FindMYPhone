@@ -110,6 +110,14 @@ class MainActivity : AppCompatActivity(), Adapter.ClickListener {
 
     override fun onItemClick(position: Int) {
         Toast.makeText(applicationContext, "pos$position", Toast.LENGTH_SHORT).show()
+
+        val df = SimpleDateFormat("dd/MMM/yy", Locale.ENGLISH)
+        val date = Date()
+
+        database!!.child("User").child(userData!!.loadPhoneNumber())
+                .child("request").setValue(df.format(date).toString())
+
+        startActivity(Intent(this,MapsActivity::class.java))
     }
 
     fun checkContactPermission() {
