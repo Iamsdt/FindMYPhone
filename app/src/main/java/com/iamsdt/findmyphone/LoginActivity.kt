@@ -14,7 +14,7 @@ class LoginActivity : AppCompatActivity() {
 
     var mAuth: FirebaseAuth? = null
 
-    //todo post firebase signInAnonymously
+    //complete post firebase signInAnonymously
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
